@@ -1,0 +1,20 @@
+<form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+  
+  <div class="row">
+    <div class="input-field col s12">
+      <input class="validate" type="text" name="email"  ngModel [pattern]="emailPattern" required>
+      <label data-error="Invalid email!">Email</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input class="validate" type="password" name="password"  ngModel required>
+      <label data-error="Required field!">Password</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
+    </div>
+  </div>
+</form>
